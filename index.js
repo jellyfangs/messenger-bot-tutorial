@@ -8,7 +8,7 @@ app.get('/', function (req, res) {
 })
 
 app.get('/webhook/', function (req, res) {
-	if (req.query['hub.verify_token'] === '<validation_token>') {
+	if (req.query['hub.verify_token'] === 'my_voice_is_my_password_verify_me') {
 		res.send(req.query['hub.challenge'])
 	}
 	res.send('Error, wrong token')
