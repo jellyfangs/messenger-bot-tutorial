@@ -3,6 +3,10 @@ var app = express()
 
 app.set('port', (process.env.PORT || 5000))
 
+app.get('/', function (req, res) {
+	res.send('hello world i am a secret bot')
+})
+
 app.get('/webhook/', function (req, res) {
 	if (req.query['hub.verify_token'] === '<validation_token>') {
 		res.send(req.query['hub.challenge'])
