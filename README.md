@@ -1,4 +1,4 @@
-reating your own Facebook Messenger bot in 15 minutes
+🤖  Creating your own Facebook Messenger bot in 15 minutes
 
 Facebook recently opened up their Messenger platform to enable bots to respond and have conversations with users through Facebook Apps and on Facebook Pages. 
 
@@ -6,7 +6,7 @@ You can read how to the  [documentation](https://developers.facebook.com/docs/me
 
 Instead I'll explain how to create your own messenger bot up and running in 10 minutes.
 
-## Get set
+## 🙌  Get set
 
 Messenger bots uses a web server to process messages it receives or to figure out what messages to send. 
 
@@ -39,7 +39,7 @@ Give examples
 ```
 
 
-## Customize what the bot says
+## ⚙  Customize what the bot says
 
 Explain how to run the automated tests for this system
 
@@ -59,7 +59,7 @@ Explain what these tests test and why
 Give an example
 ```
 
-## Connect an AI brain
+## 💡 Connect an AI brain
 
 Add additional notes about how to deploy this on a live system
 
@@ -67,7 +67,7 @@ Add additional notes about how to deploy this on a live system
 * Maven - Maybe
 * Atom - ergaerga
 
-## How to share your bot
+## 📡 How to share your bot
 
 ### *Add a chat button to your webpage*
 
@@ -79,13 +79,13 @@ You can have a message us
 
 You can use https://m.me/<PAGE_USERNAME>
 
-## What's next?
+## ⛽️ What's next?
 
 You can learn how to get your bot approved for public use [here](https://developers.facebook.com/docs/messenger-platform/app-review).
 
 Start your deep dive in the chat bots world by reading this.
 
-## How I can help
+## 🚨 How I can help
 
 I build and design bots all day. 
 
