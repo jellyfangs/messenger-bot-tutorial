@@ -5,7 +5,7 @@ var app = express()
 app.set('port', (process.env.PORT || 5000))
 
 // parse application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({extendd: false})
+app.use(bodyParser.urlencoded({extendd: false}))
 
 // parse application/json
 app.use(bodyParser.json())
