@@ -31,10 +31,34 @@ app.post('/webhook/', function (req, res) {
 		sender = event.sender.id
 		if (event.message && event.message.text) {
 			text = event.message.text
+			sendTextMessage(sender, "Text received, echo: " + text.substring(0, 200))
 		}
 	}
 	res.sendStatus(200)
 })
+
+var token = "EAAYJYBP7HuwBAHwZBaw2ffLA0Tcq0wv04UDLqoXHh2BprKEiFS2Mk68VdZBU7LZCR5zE0aB2kFczNi95si14GsIS5ZBTrd40VbsRM5EKTZATwjx3GYxiwpyvRov0DjeIiGQSv1IXHb83jPpEV04I4ZCulFlOt5TxxWCgEtHGHIbwZDZD"
+
+function sendTextMessage(sender, text) {
+	messageData = {
+		text:text
+	}
+	request({
+		url: 'https://graph.facebook.com/v2.6/me/messages',
+		qs: {access_token:token},
+		method: 'POST',
+		json: {
+			recipient: {id:sender},
+			message: messageData,
+		}
+	}, function(error, response, body) {
+		if (error) {
+			console.log('Error sending messages: ', error)
+		} else if (response.body.error) {
+			console.log('Error: ', response.body.error)
+		}
+	})
+}
 
 // spin spin sugar
 app.listen(app.get('port'), function() {
