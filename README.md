@@ -253,7 +253,7 @@ Facebook Messenger can send messages structured as cards or buttons.
 
 What happens when the user clicks on a message button or card though? Let's update the webhook API one more time to send back a postback function.
 
-    ```
+		```
     app.post('/webhook/', function (req, res) {
 	    messaging_events = req.body.entry[0].messaging
 	    for (i = 0; i < messaging_events.length; i++) {
@@ -280,6 +280,8 @@ What happens when the user clicks on a message button or card though? Let's upda
 Git add, commit, and push to Heroku again.
 
 Now when you chat with the bot and type 'Generic' you can see this.
+
+   ![Alt text](/demo/shot6.jpg)
 
 ## 📡 How to share your bot
 
