@@ -38,11 +38,13 @@ You can also skip the whole thing by git cloning this repository, running npm in
 
 5. Create an index.js file in the folder and copy this into it. We will start by authenticating the bot.
 
-    ```
-    var express = require('express')
-    var bodyParser = require('body-parser')
-    var request = require('request')
-    var app = express()
+    ```javascript
+    'use strict'
+    
+    const express = require('express')
+    const bodyParser = require('body-parser')
+    const request = require('request')
+    const app = express()
 
     app.set('port', (process.env.PORT || 5000))
 
@@ -103,7 +105,7 @@ You can also skip the whole thing by git cloning this repository, running npm in
 
 4. Go back to Terminal and type in this command to trigger the Facebbook app to send messages. Remember to use the token you requested earlier.
 
-    ```
+    ```bash
     curl -X POST "https://graph.facebook.com/v2.6/me/subscribed_apps?access_token=<PAGE_ACCESS_TOKEN>"
     ```
 
@@ -113,30 +115,28 @@ Now that Facebook and Heroku can talk to each other we can code out the bot.
 
 1. Add an API endpoint to index.js to process messages. Remember to also include the token we got earlier. 
 
-    ```
+    ```javascript
     app.post('/webhook/', function (req, res) {
-	    messaging_events = req.body.entry[0].messaging
-	    for (i = 0; i < messaging_events.length; i++) {
-		    event = req.body.entry[0].messaging[i]
-		    sender = event.sender.id
+	    let messaging_events = req.body.entry[0].messaging
+	    for (let i = 0; i < messaging_events.length; i++) {
+		    let event = req.body.entry[0].messaging[i]
+		    let sender = event.sender.id
 		    if (event.message && event.message.text) {
-			    text = event.message.text
+			    let text = event.message.text
 			    sendTextMessage(sender, "Text received, echo: " + text.substring(0, 200))
 		    }
 	    }
 	    res.sendStatus(200)
     })
 
-    var token = "<PAGE_ACCESS_TOKEN>"
+    const token = "<PAGE_ACCESS_TOKEN>"
     ```
-
+    
 3. Add a function to echo back messages
 
-    ```
+    ```javascript
     function sendTextMessage(sender, text) {
-	    messageData = {
-		    text:text
-	    }
+	    let messageData = { text:text }
 	    request({
 		    url: 'https://graph.facebook.com/v2.6/me/messages',
 		    qs: {access_token:token},
@@ -177,9 +177,9 @@ Facebook Messenger can send messages structured as cards or buttons.
 
 1. Copy the code below to index.js to send an test message back as two cards.
 
-    ```
+    ```javascript
     function sendGenericMessage(sender) {
-	    messageData = {
+	    let messageData = {
 		    "attachment": {
 			    "type": "template",
 			    "payload": {
@@ -230,14 +230,14 @@ Facebook Messenger can send messages structured as cards or buttons.
 
 2. Update the webhook API to look for special messages to trigger the cards
 
-    ```
+    ```javascript
     app.post('/webhook/', function (req, res) {
-	    messaging_events = req.body.entry[0].messaging
-	    for (i = 0; i < messaging_events.length; i++) {
-		    event = req.body.entry[0].messaging[i]
-		    sender = event.sender.id
+	    let messaging_events = req.body.entry[0].messaging
+	    for (let i = 0; i < messaging_events.length; i++) {
+		    let event = req.body.entry[0].messaging[i]
+		    let sender = event.sender.id
 		    if (event.message && event.message.text) {
-			    text = event.message.text
+			    let text = event.message.text
 			    if (text === 'Generic') {
 				    sendGenericMessage(sender)
 			    	continue
@@ -253,29 +253,29 @@ Facebook Messenger can send messages structured as cards or buttons.
 
 What happens when the user clicks on a message button or card though? Let's update the webhook API one more time to send back a postback function.
 
-		```
-    app.post('/webhook/', function (req, res) {
-	    messaging_events = req.body.entry[0].messaging
-	    for (i = 0; i < messaging_events.length; i++) {
-		    event = req.body.entry[0].messaging[i]
-		    sender = event.sender.id
-		    if (event.message && event.message.text) {
-			    text = event.message.text
-			    if (text === 'Generic') {
-				    sendGenericMessage(sender)
-				    continue
-			    }
-			    sendTextMessage(sender, "Text received, echo: " + text.substring(0, 200))
-		    }
-		    if (event.postback) {
-			    text = JSON.stringify(event.postback)
-			    sendTextMessage(sender, "Postback received: "+text.substring(0, 200), token)
-			    continue
-		    }
-	    }
-	    res.sendStatus(200)
-    })
-    ```
+```javascript  
+  app.post('/webhook/', function (req, res) {
+    let messaging_events = req.body.entry[0].messaging
+    for (let i = 0; i < messaging_events.length; i++) {
+      let event = req.body.entry[0].messaging[i]
+      let sender = event.sender.id
+      if (event.message && event.message.text) {
+  	    let text = event.message.text
+  	    if (text === 'Generic') {
+  		    sendGenericMessage(sender)
+  		    continue
+  	    }
+  	    sendTextMessage(sender, "Text received, echo: " + text.substring(0, 200))
+      }
+      if (event.postback) {
+  	    let text = JSON.stringify(event.postback)
+  	    sendTextMessage(sender, "Postback received: "+text.substring(0, 200), token)
+  	    continue
+      }
+    }
+    res.sendStatus(200)
+  })
+```
 
 Git add, commit, and push to Heroku again.
 
