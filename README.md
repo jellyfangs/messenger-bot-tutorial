@@ -132,6 +132,33 @@ Now that Facebook and Heroku can talk to each other we can code out the bot.
     const token = "<PAGE_ACCESS_TOKEN>"
     ```
     
+    **Optional, but recommended**: keep your app secrets out of version control!
+    - On Heroku, its easy to create dynamic runtime variables (known as [config vars](https://devcenter.heroku.com/articles/config-vars)). This can be done in the Heroku dashboard UI for your app **or** from the command line:
+    ![Alt text](/demo/config_vars.jpg)
+    ```bash
+    heroku config:set FB_PAGE_ACCESS_TOKEN=fake-access-token-dhsa09uji4mlkasdfsd
+    
+    # view
+    heroku config
+    ```
+
+    - For local development: create an [environmental variable](https://en.wikipedia.org/wiki/Environment_variable) in your current session or add to your shell config file.
+    ```bash
+    # create env variable for current shell session
+    export FB_PAGE_ACCESS_TOKEN=fake-access-token-dhsa09uji4mlkasdfsd
+    
+    # alternatively, you can add this line to your shell config
+    # export FB_PAGE_ACCESS_TOKEN=fake-access-token-dhsa09uji4mlkasdfsd
+    
+    echo $FB_PAGE_ACCESS_TOKEN
+    ```
+    
+    - `config var` access at runtime
+    ``` javascript
+    const token = process.env.FB_PAGE_ACCESS_TOKEN
+    ```
+    
+    
 3. Add a function to echo back messages
 
     ```javascript
