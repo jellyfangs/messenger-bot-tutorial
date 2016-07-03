@@ -15,15 +15,15 @@ app.use(bodyParser.json())
 
 // index
 app.get('/', function (req, res) {
-	res.send('hello world i am a secret bot')
+	res.send('hello world i am aj secret bot')
 })
 
 // for facebook verification
 app.get('/webhook/', function (req, res) {
-	if (req.query['hub.verify_token'] === 'my_voice_is_my_password_verify_me') {
+	if (req.query['hub.verify_token'] === 'secret_password') {
 		res.send(req.query['hub.challenge'])
 	}
-	res.send('Error, wrong token')
+	res.send('Error, wrong token AJ')
 })
 
 // to post data
@@ -38,11 +38,11 @@ app.post('/webhook/', function (req, res) {
 				sendGenericMessage(sender)
 				continue
 			}
-			sendTextMessage(sender, "Text received, echo: " + text.substring(0, 200))
+			sendTextMessage(sender, "AJ Text received, echo: " + text.substring(0, 200))
 		}
 		if (event.postback) {
 			let text = JSON.stringify(event.postback)
-			sendTextMessage(sender, "Postback received: "+text.substring(0, 200), token)
+			sendTextMessage(sender, "AJ Postback received: "+text.substring(0, 200), token)
 			continue
 		}
 	}
@@ -52,7 +52,7 @@ app.post('/webhook/', function (req, res) {
 
 // recommended to inject access tokens as environmental variables, e.g.
 // const token = process.env.PAGE_ACCESS_TOKEN
-const token = "<PAGE_ACCESS_TOKEN>"
+const token = "XRuMAzaIrWZAUO66xTbi1pvzWz1kQWSrBRuz6bpobJRmDwZDZD"
 
 function sendTextMessage(sender, text) {
 	let messageData = { text:text }
