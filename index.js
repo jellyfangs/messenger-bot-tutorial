@@ -81,12 +81,12 @@ function sendGenericMessage(sender) {
 			"payload": {
 				"template_type": "generic",
 				"elements": [{
-					"title": "First card",
-					"subtitle": "Element #1 of an hscroll",
+					"title": "Payment Due",
+					"subtitle": "Your upcoming payment due on 07/15/2016",
 					"image_url": "http://messengerdemo.parseapp.com/img/rift.png",
 					"buttons": [{
 						"type": "web_url",
-						"url": "https://www.messenger.com",
+						"url": "https://online.factsmgt.com",
 						"title": "web url"
 					}, {
 						"type": "postback",
@@ -94,13 +94,22 @@ function sendGenericMessage(sender) {
 						"payload": "Payload for first element in a generic bubble",
 					}],
 				}, {
-					"title": "Second card",
-					"subtitle": "Element #2 of an hscroll",
+					"title": "Upcoming Payments",
+					"subtitle": "Your future payments",
 					"image_url": "http://messengerdemo.parseapp.com/img/gearvr.png",
 					"buttons": [{
 						"type": "postback",
 						"title": "Postback",
 						"payload": "Payload for second element in a generic bubble",
+					}],
+					{
+					"title": "Completed Payments",
+					"subtitle": "Your Payment history",
+					"image_url": "http://messengerdemo.parseapp.com/img/gearvr.png",
+					"buttons": [{
+						"type": "postback",
+						"title": "Postback",
+						"payload": "Payload for third element in a generic bubble",
 					}],
 				}]
 			}
