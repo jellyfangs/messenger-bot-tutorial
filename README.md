@@ -189,7 +189,7 @@ Now that Facebook and Heroku can talk to each other we can code out the bot.
     git commit -m 'updated the bot to speak'
     git push heroku master
     ```
-
+    
 5. Go to the Facebook Page and click on Message to start chatting!
 
 ![Alt text](/demo/shot4.jpg)
@@ -202,7 +202,7 @@ Facebook Messenger can send messages structured as cards or buttons.
 
 ![Alt text](/demo/shot5.jpg)
 
-1. Copy the code below to index.js to send an test message back as two cards.
+1. Copy the code below to index.js to send a test message back as two cards.
 
     ```javascript
     function sendGenericMessage(sender) {
