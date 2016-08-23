@@ -4,6 +4,11 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const request = require('request')
 const app = express()
+//const bot = require('node-wit').Wit
+const bot = require('./bot.js')
+
+// Setting up our bot
+const wit = bot.getWit()
 
 app.set('port', (process.env.PORT || 5000))
 
@@ -52,7 +57,7 @@ app.post('/webhook/', function (req, res) {
 
 // recommended to inject access tokens as environmental variables, e.g.
 // const token = process.env.PAGE_ACCESS_TOKEN
-const token = "EAAR8dpi5Ae4BANlcMZB1rK2zgS0pUDwDVZCgXA64T389NQl2ycT8KZBniXGgebFBq9N3honekW6kIzbWix4NX1pWLDeykpaDcs7AUYI6B4ZBWJkFfg83lFpmIXhBADWXhatEq9ZAXT61dnM2J7YVmvT4efglZCqFXOS5zT9ctpSgZDZD"
+const token = "<PAGE_ACCESS_TOKEN>"
 
 function sendTextMessage(sender, text) {
 	let messageData = { text:text }
@@ -82,7 +87,7 @@ function sendGenericMessage(sender) {
 				"template_type": "generic",
 				"elements": [{
 					"title": "First card",
-					"subtitle": "Element #1 of an hscroll<br><br>Element #1 of an hscroll",
+					"subtitle": "Element #1 of an hscroll",
 					"image_url": "http://messengerdemo.parseapp.com/img/rift.png",
 					"buttons": [{
 						"type": "web_url",
