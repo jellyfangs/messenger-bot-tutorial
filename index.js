@@ -46,7 +46,7 @@ app.post('/webhook/', function (req, res) {
 			else
 			{
 			  // We received a text message
-			  const sender = messaging.sender.id
+			  //const sender = messaging.sender.id
 			  const sessionId = findOrCreateSession(sender)
 			  // Let's forward the message to the Wit.ai Bot Engine
 			  // This will run all actions until our bot has nothing left to do
