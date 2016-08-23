@@ -52,7 +52,7 @@ app.post('/webhook/', function (req, res) {
 			  // This will run all actions until our bot has nothing left to do
 			  wit.runActions(
 				sessionId, // the user's current session
-				msg, // the user's message 
+				text, // the user's message 
 				sessions[sessionId].context, // the user's current session state
 				(error, context) => {
 				  if (error) {
@@ -77,7 +77,7 @@ app.post('/webhook/', function (req, res) {
 				}
 			  );
 			}
-			sendTextMessage(sender, "Text received, echo: " + text.substring(0, 200))
+			//sendTextMessage(sender, "Text received, echo: " + text.substring(0, 200))
 		}
 		if (event.postback) {
 			let text = JSON.stringify(event.postback)
