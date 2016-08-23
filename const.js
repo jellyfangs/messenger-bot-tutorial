@@ -10,9 +10,9 @@ if (!WIT_TOKEN) {
 // Messenger API parameters
 const FB_PAGE_TOKEN = "EAAR8dpi5Ae4BANlcMZB1rK2zgS0pUDwDVZCgXA64T389NQl2ycT8KZBniXGgebFBq9N3honekW6kIzbWix4NX1pWLDeykpaDcs7AUYI6B4ZBWJkFfg83lFpmIXhBADWXhatEq9ZAXT61dnM2J7YVmvT4efglZCqFXOS5zT9ctpSgZDZD";
 
-var FB_VERIFY_TOKEN = process.env.FB_VERIFY_TOKEN;
+var FB_VERIFY_TOKEN = "my_voice_is_my_password_verify_me";
 if (!FB_VERIFY_TOKEN) {
-  FB_VERIFY_TOKEN = "just_do_it";
+  FB_VERIFY_TOKEN = "my_voice_is_my_password_verify_me";
 }
 
 module.exports = {
