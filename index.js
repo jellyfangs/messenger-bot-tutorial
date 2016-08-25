@@ -97,8 +97,8 @@ app.post('/webhook/', function (req, res) {
 				sendGenericMessage(sender)
 				continue
 			}
-			getwit(req)
-			//sendTextMessage(sender, "Text received, echo: " + text.substring(0, 200))
+			//getwit(req)
+			sendTextMessage(sender, "Text received, echo: " + text.substring(0, 200))
 		}
 		if (event.postback) {
 			let text = JSON.stringify(event.postback)
