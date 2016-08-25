@@ -97,8 +97,8 @@ app.post('/webhook/', function (req, res) {
 				sendGenericMessage(sender)
 				continue
 			}
-			//getwit(req)
-			sendTextMessage(sender, "Text received, echo: " + text.substring(0, 200))
+			getwit(text)
+			//sendTextMessage(sender, "Text received, echo: " + text.substring(0, 200))
 		}
 		if (event.postback) {
 			let text = JSON.stringify(event.postback)
@@ -182,9 +182,9 @@ function sendGenericMessage(sender) {
 		}
 	})
 }
-function getwit(req)
+function getwit(messaging)
 {
-const messaging = FB.getFirstMessagingEntry(req.body);
+//const messaging = FB.getFirstMessagingEntry(req.body);
   if (messaging && messaging.message) {
     // Yay! We got a new message!
     // We retrieve the Facebook user ID of the sender
