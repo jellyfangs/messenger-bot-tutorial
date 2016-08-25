@@ -1,8 +1,8 @@
 'use strict';
 
 // Wit.ai parameters
-const WIT_TOKEN = process.env.WIT_TOKEN;
-//const WIT_TOKEN = "YVTD4SSYSXSSYNHGY3TZOG6PTQMP7UWF";
+//const WIT_TOKEN = process.env.WIT_TOKEN;
+const WIT_TOKEN = "YVTD4SSYSXSSYNHGY3TZOG6PTQMP7UWF";
 if (!WIT_TOKEN) {
   throw new Error('missing WIT_TOKEN');
 }
