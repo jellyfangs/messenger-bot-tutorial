@@ -228,6 +228,7 @@ function getwit(messaging)
             // Updating the user's current session state
             sessions[sessionId].context = context;
 			sendTextMessage(sender, "Text received, echo: " + text.substring(0, 200));
+			console.log(text.substring(0, 200));
           }
         }
       );
