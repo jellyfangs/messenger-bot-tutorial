@@ -97,7 +97,7 @@ app.post('/webhook/', function (req, res) {
 				sendGenericMessage(sender)
 				continue
 			}
-			getwit(text)
+			getwit(messaging_events)
 			//sendTextMessage(sender, "Text received, echo: " + text.substring(0, 200))
 		}
 		if (event.postback) {
