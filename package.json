@@ -1,16 +1,24 @@
 {
   "name": "secretbots",
   "version": "1.0.0",
-  "description": "",
+  "description": "![Alt text](/demo/Demo.gif)",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "mvw",
   "license": "ISC",
   "dependencies": {
-    "body-parser": "^1.15.0",
-    "express": "^4.13.4",
-    "request": "^2.71.0"
-  }
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "request": "^2.74.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Whelpley/messenger-bot-tutorial.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Whelpley/messenger-bot-tutorial/issues"
+  },
+  "homepage": "https://github.com/Whelpley/messenger-bot-tutorial#readme"
 }
