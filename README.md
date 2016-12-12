@@ -103,7 +103,7 @@ You can also skip the whole thing by git cloning this repository, running npm in
 
     ![Alt text](/demo/shot2.jpg)
 
-4. Go back to Terminal and type in this command to trigger the Facebbook app to send messages. Remember to use the token you requested earlier.
+4. Go back to Terminal and type in this command to trigger the Facebook app to send messages. Remember to use the token you requested earlier.
 
     ```bash
     curl -X POST "https://graph.facebook.com/v2.6/me/subscribed_apps?access_token=<PAGE_ACCESS_TOKEN>"
