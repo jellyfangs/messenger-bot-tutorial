@@ -95,7 +95,7 @@ You can also skip the whole thing by git cloning this repository, running npm in
 
     ![Alt text](/demo/shot1.jpg)
 
-2. In the app go to Messenger tab then click Setup Webhook. Here you will put in the URL of your Heroku server and a token. Make sure to check all the subscription fields. 
+2. In the app go to Messenger tab then click Setup Webhook. Here you will put in the URL of your Heroku server (https://this-app-68903.herokuapp.com/webhook/") and a token. Make sure to check all the subscription fields. 
 
     ![Alt text](/demo/shot3.jpg)
 
