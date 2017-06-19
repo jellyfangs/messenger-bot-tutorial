@@ -1,6 +1,6 @@
 # 🤖 Creating your own Facebook Messenger bot
 
-![Alt text](/demo/Demo.gif)
+![Alt text](/../6e611374891791a5dfc15ed070c0cd1d3de636b5/demo/Demo.gif)
 
 Facebook recently opened up their Messenger platform to enable bots to converse with users through Facebook Apps and on Facebook Pages. 
 
@@ -93,15 +93,15 @@ You can also skip the whole thing by git cloning this repository, running npm in
 
 1. Create or configure a Facebook App or Page here https://developers.facebook.com/apps/
 
-    ![Alt text](/demo/shot1.jpg)
+    ![Alt text](/../6e611374891791a5dfc15ed070c0cd1d3de636b5/demo/shot1.jpg)
 
 2. In the app go to Messenger tab then click Setup Webhook. Here you will put in the URL of your Heroku server and a token. Make sure to check all the subscription fields. 
 
-    ![Alt text](/demo/shot3.jpg)
+    ![Alt text](/../6e611374891791a5dfc15ed070c0cd1d3de636b5/demo/shot3.jpg)
 
 3. Get a Page Access Token and save this somewhere. 
 
-    ![Alt text](/demo/shot2.jpg)
+    ![Alt text](/../6e611374891791a5dfc15ed070c0cd1d3de636b5/demo/shot2.jpg)
 
 4. Go back to Terminal and type in this command to trigger the Facebook app to send messages. Remember to use the token you requested earlier.
 
@@ -134,7 +134,7 @@ Now that Facebook and Heroku can talk to each other we can code out the bot.
     
     **Optional, but recommended**: keep your app secrets out of version control!
     - On Heroku, its easy to create dynamic runtime variables (known as [config vars](https://devcenter.heroku.com/articles/config-vars)). This can be done in the Heroku dashboard UI for your app **or** from the command line:
-    ![Alt text](/demo/config_vars.jpg)
+    ![Alt text](/../6e611374891791a5dfc15ed070c0cd1d3de636b5/demo/config_vars.jpg)
     ```bash
     heroku config:set FB_PAGE_ACCESS_TOKEN=fake-access-token-dhsa09uji4mlkasdfsd
     
@@ -192,7 +192,7 @@ Now that Facebook and Heroku can talk to each other we can code out the bot.
     
 5. Go to the Facebook Page and click on Message to start chatting!
 
-![Alt text](/demo/shot4.jpg)
+![Alt text](/../6e611374891791a5dfc15ed070c0cd1d3de636b5/demo/shot4.jpg)
 
 ## ⚙ Customize what the bot says
 
@@ -200,7 +200,7 @@ Now that Facebook and Heroku can talk to each other we can code out the bot.
 
 Facebook Messenger can send messages structured as cards or buttons. 
 
-![Alt text](/demo/shot5.jpg)
+![Alt text](/../6e611374891791a5dfc15ed070c0cd1d3de636b5/demo/shot5.jpg)
 
 1. Copy the code below to index.js to send a test message back as two cards.
 
@@ -308,7 +308,7 @@ Git add, commit, and push to Heroku again.
 
 Now when you chat with the bot and type 'Generic' you can see this.
 
-   ![Alt text](/demo/shot6.jpg)
+   ![Alt text](/../6e611374891791a5dfc15ed070c0cd1d3de636b5/demo/shot6.jpg)
 
 ## 📡 How to share your bot
 
